@@ -1,0 +1,74 @@
+
+@import 'bootstrap/dist/css/bootstrap';
+//**************** BODY *****************
+html,
+body {
+  height: 100%;
+}
+
+// embedding yield from _navigation to _footer
+#page-content {
+  flex: 1 0 auto;
+  background-color: #eaeaea;
+}
+
+//**************** NAVBAR *****************
+.navbar {
+  background-color: #252a34 !important;
+}
+
+.nav-link {
+  color: white !important;
+}
+
+#logo {
+  color: #fff;
+  font-size: 1.5rem;
+  float: left;
+  text-transform: uppercase;
+  letter-spacing: -1px;
+  font-weight: bold;
+}
+
+//******************* HOMEPAGE ******************
+.jumbotron {
+  background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), asset-url("home_background.jpg");
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: white;
+  height: 425px;
+}
+
+.jumbotron h1 {
+  margin-bottom: 2rem;
+}
+
+.jumbotron p {
+  padding:0.5rem 7%;
+}
+
+.jumbotron a {
+  margin-top: 1rem;
+}
+
+// **** ARTICLES **** 
+//Card
+#article-list-title {
+  color: #8bbabb !important;
+}
+
+// ********** FORM ***************
+#form {
+  background-color: #8bbabb !important;
+}
+
+.profile-img {
+  border-radius: 100% !important;
+}
+
+// **** FOOTER ****
+#sticky-footer {
+  flex-shrink: none;
+}
+

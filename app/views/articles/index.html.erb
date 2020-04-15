@@ -1,0 +1,12 @@
+<h1 class="text-center mt-4">List of articles</h1>
+
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-8 mt-4">
+      <%= will_paginate(@things, :renderer => WillPaginate::ActionView::Bootstrap4LinkRenderer) %>
+    </div>
+  </div>
+</div>  
+
+<%= render "articles" %>
+

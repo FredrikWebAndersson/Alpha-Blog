@@ -1,0 +1,25 @@
+<div class="container">
+  <% @articles.each do |article| %>
+    <div class="row justify-content-md-center">
+      <div class="col-8 mt-4">
+        <div class="card text-center shadow mb-5 bg-white rounded">
+          <div class="card-header font-italic">
+            <% if article.user %>
+              by <%= link_to article.user.username, user_path(article.user) %> 
+            <% end %>
+          </div>
+          <div class="card-body">
+            <h4 class="card-title"><%= link_to article.title, article_path(article.id), id: "article-list-title", class: "text-decoration-none text-capitalize" %></h4>
+            <p class="card-text"><%= truncate(article.description, length: 100) %></p>
+            <%= link_to "View", article_path(article.id), class: "btn btn-sm btn-outline-dark" %>
+            <%= link_to "Edit", edit_article_path(article.id), class: "btn btn-sm btn-outline-dark" %>
+            <%= link_to "Delete", article_path(article.id), method: :delete, class: "btn btn-sm btn-outline-danger", data: {confirm: "Do you really want to delete this article ?"} %>
+          </div>
+          <div class="card-footer text-muted">
+            <small>Created <%= time_ago_in_words(article.created_at) %> ago, Edited <%= time_ago_in_words(article.updated_at) %> ago</small>
+          </div>
+        </div>
+      </div>
+    </div>
+  <% end %>
+</div>
