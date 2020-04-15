@@ -72,3 +72,37 @@ body {
   flex-shrink: none;
 }
 
+// ******* PAGINATION Flickr.com ***********
+.flickr_pagination {
+  text-align: center;
+  padding: 0.3em;
+  cursor: default; }
+  .flickr_pagination a, .flickr_pagination span, .flickr_pagination em {
+    padding: 0.2em 0.5em;
+    border-radius: 5px; 
+  }
+  .flickr_pagination .disabled {
+    color: #aaaaaa; }
+  .flickr_pagination .current {
+    border: 1px solid #252a34;
+    font-style: normal;
+    font-weight: bold;
+    color: #DC3545; }
+  .flickr_pagination a {
+    border: 1px solid #252a34;
+    color: #252a34;
+    text-decoration: none; }
+    .flickr_pagination a:hover, .flickr_pagination a:focus {
+      border-radius: 5px;
+      border-color: #DC3545;
+      background: #DC3545;
+      color: white; }
+  .flickr_pagination .page_info {
+    color: #aaaaaa;
+    padding-top: 0.8em; }
+  .flickr_pagination .previous_page, .flickr_pagination .next_page {
+    border-width: 1px; }
+  .flickr_pagination .previous_page {
+    margin-right: 1em; }
+  .flickr_pagination .next_page {
+    margin-left: 1em; }
