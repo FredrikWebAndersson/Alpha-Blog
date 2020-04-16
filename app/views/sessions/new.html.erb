@@ -1,0 +1,20 @@
+<div class="form-signin">
+  <h1 class="text-center mt-4 mb-4">Please sign in</h1>
+
+  <div id ="signinForm" class="card shadow rounded">
+    <div class="card-body">
+      <%= form_with(scope: :session, url: login_path, local: true) do |f| %>
+        <%= f.label :email, class: "sr-only" %>
+        <%= f.email_field :email, id:"inputEmail", class: "form-control shadow rounded", placeholder: "Enter your email" %>
+        <%= f.label :password, class: "sr-only" %>
+        <%= f.password_field :password, id: "inputPassword", class: "form-control shadow rounded mb-4", placeholder: "Password" %>
+        <button class="btn btn-lg btn-outline-light btn-block" type="submit">Sign in</button>
+      <% end %>
+    </div>
+  </div>
+  <div class="row justify-content-center mt-5">
+  <%= link_to "[ Cancel ]", root_path, class: " text-info text-decoration-none" %>
+</div>
+</div>
+
+

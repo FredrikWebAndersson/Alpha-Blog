@@ -106,3 +106,21 @@ body {
     margin-right: 1em; }
   .flickr_pagination .next_page {
     margin-left: 1em; }
+
+    // SIGN IN 
+    .form-signin {
+      margin: auto;
+      max-width: 330px;
+    }
+    #signinForm {
+      background-color: #8bbabb !important;
+    }
+
+    #inputEmail {
+      border-bottom-left-radius: 0 !important;
+      border-bottom-right-radius: 0 !important;      
+    }
+    #inputPassword {
+      border-top-left-radius: 0 !important;
+      border-top-right-radius: 0 !important;
+    }
