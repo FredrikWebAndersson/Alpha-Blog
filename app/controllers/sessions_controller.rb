@@ -10,7 +10,7 @@ def create
     flash[:success] = "Logged in successfully!"
     redirect_to user
   else
-    flash.now[:alert] = "There was something wrong with your login details"
+    flash.now[:danger] = "There was something wrong with your login details"
     render "new"
   end
   #flash.now is used when we dont redirect to another page, is shows up "now"

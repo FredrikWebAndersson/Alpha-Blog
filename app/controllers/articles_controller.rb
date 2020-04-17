@@ -41,7 +41,8 @@ class ArticlesController < ApplicationController
 
   def destroy
     @article.destroy
-    redirect_to articles_path
+    flash[:warning] = "The article has been deleted"
+    redirect_to user_path(@article.user)
   end
 
   private
