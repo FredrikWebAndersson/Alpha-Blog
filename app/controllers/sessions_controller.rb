@@ -7,7 +7,7 @@ def create
   user = User.find_by(email: params[:session][:email].downcase)
   if user && user.authenticate(params[:session][:password])
     session[:user_id] = user.id
-    flash[:notice] = "Logged in successfully!"
+    flash[:success] = "Logged in successfully!"
     redirect_to user
   else
     flash.now[:alert] = "There was something wrong with your login details"
@@ -20,7 +20,7 @@ end
 
 def destroy
   session[:user_id] = nil
-  flash[:notice] = "Logged out"
+  flash[:success] = "Logged out"
   redirect_to root_path
 end
 

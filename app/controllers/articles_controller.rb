@@ -23,7 +23,7 @@ class ArticlesController < ApplicationController
     @article = Article.new(article_params) #Security to admit creation, or update 
     @article.user = current_user
     if @article.save
-      flash[:notice] = "Article was created succesfully !"
+      flash[:success] = "Article was created succesfully !"
       redirect_to @article
     else
       render "new"
@@ -32,7 +32,7 @@ class ArticlesController < ApplicationController
 
   def update
     if @article.update(article_params)
-      flash[:notice] = "Article was succesfully updated !"
+      flash[:success] = "Article was succesfully updated !"
       redirect_to @article
     else
       render "edit"

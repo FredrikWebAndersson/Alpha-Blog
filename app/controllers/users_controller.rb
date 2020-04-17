@@ -19,7 +19,7 @@ class UsersController < ApplicationController
 
   def update
     if @user.update(user_params)
-      flash[:notice] = "Your profile was successfully updated!"
+      flash[:success] = "Your profile was successfully updated!"
       redirect_to @user
     else
       render "edit"
@@ -28,9 +28,10 @@ class UsersController < ApplicationController
   
   def create 
     @user = User.new(user_params) #Security to admit creation, or update
-    if @user.save 
-      flash[:notice] = "Welcome to the Alpha Blog #{@user.username}, you have successfully signed up!"
-      redirect_to articles_path
+    if @user.save
+      session[:user_id] = @user.id
+      flash[:success] = "Welcome to the Alpha Blog #{@user.username}, you have successfully signed up!"
+      redirect_to user_path(@user)
     else
       render "new"
     end
