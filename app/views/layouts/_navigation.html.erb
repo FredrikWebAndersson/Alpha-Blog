@@ -13,6 +13,18 @@
       <li class="nav-item">
         <%= link_to "Bloggers", users_path, class: "nav-link" %>
       </li>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Categories
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <%= link_to "All Categories", categories_path, class: "dropdown-item" %>
+          <div class="dropdown-divider"></div>
+          <% Category.all.each do |category| %>
+            <%= link_to category.name, category_path(category), class: "dropdown-item" %>
+          <% end %>
+        </div>
+      </li>
       <form class="form-inline my-2 my-lg-0">
         <input class="form-control ml-3 mr-sm-2" type="search" placeholder="Search" aria-label="Search">
         <button class="navbar-btn btn btn-outline-danger my-2 my-sm-0" type="submit">Search</button>
@@ -25,7 +37,10 @@
             Your <%= "Admin" if current_user.admin? %> Profil
           </a>
           <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <%= link_to "Create new article", new_article_path, class: "dropdown-item" %>
+            <%= link_to "Create New Article", new_article_path, class: "dropdown-item" %>
+            <% if logged_in? and current_user.admin? %>
+              <%= link_to "Create New Category", new_category_path, class: "dropdown-item" %>
+            <% end %>
             <%= link_to "View your profil", user_path(current_user), class: "dropdown-item" %>
             <div class="dropdown-divider"></div>
             <%= link_to "Edit your profil", edit_user_path(current_user), class: "dropdown-item" %>
