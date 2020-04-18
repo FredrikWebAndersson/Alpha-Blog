@@ -1,4 +1,8 @@
-<h1 class="text-center mt-4">Listing all categories</h1>
+<h1 class="text-center mt-4 mb-3">Listing all categories</h1>
+
+<div class="flickr_pagination">
+  <%= will_paginate @categories, :container => false %>
+</div>
 
 <div class="container">
   <% @categories.each do |category| %>
@@ -6,8 +10,6 @@
       <div class="col-8 mt-4">
         <div class="card text-center shadow mb-5 bg-white rounded">
           <div class="card-body">
-            <h4 class="card-title">Category</h4>
-            <hr>
             <%= link_to category.name, category_path(category), class: "btn btn-lg btn-outline-dark" %>
           </div>
           <div class="card-footer text-muted">
@@ -15,6 +17,10 @@
           </div>
         </div>
       </div>
-    </div>
-  <% end %>
+    </div>    
+  <% end %>  
+</div>
+
+<div class="flickr_pagination">
+  <%= will_paginate @categories, :container => false %>
 </div>
