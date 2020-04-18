@@ -10,4 +10,10 @@ class ActiveSupport::TestCase
   fixtures :all
 
   # Add more helper methods to be used by all tests here...
+
+  # Simulation a logged in user for categories create test resctriction for all but Admins
+  def sign_in_as(user, password)
+    post login_path, params: {session: {email: user.email, password: password}}
+  end 
+
 end
