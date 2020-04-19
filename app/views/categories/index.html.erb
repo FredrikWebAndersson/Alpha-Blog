@@ -10,7 +10,8 @@
       <div class="col-8 mt-4">
         <div class="card text-center shadow mb-5 bg-white rounded">
           <div class="card-body">
-            <%= link_to category.name, category_path(category), class: "btn btn-lg btn-outline-dark" %>
+            <%= link_to category.name, category_path(category), class: "btn btn-lg btn-outline-dark" %> <br>
+            <small><%= pluralize(category.articles.count, "articles") %></small>
           </div>
           <div class="card-footer text-muted">
             <small>Created <%= time_ago_in_words(category.created_at) %> ago</small>

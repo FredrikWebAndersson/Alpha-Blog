@@ -1,16 +1,13 @@
-<h1 class="text-center mt-4"><%= @category.name.capitalize %> Category</h1>
+<h1 class="text-center mt-4">Category: <%= @category.name %></h1>
 
-<div class="container">
-    <div class="row justify-content-md-center">
-      <div class="col-8 mt-4">
-        <div class="card text-center shadow mb-5 bg-white rounded">
-          <div class="card-body">
-            <h4 class="card-title">Articles index for <%= @category.name %> category</h4>
-          </div>
-          <div class="card-footer text-muted">
-            <small>Category created <%= time_ago_in_words(@category.created_at) %> ago</small>
-          </div>
-        </div>
-      </div>
-    </div>
+<h4 class="text-muted text-center mt-4"><%= @category_articles.count %> articles associated with this category</h4>
+
+<div class="flickr_pagination mt-4">
+  <%= will_paginate @category_articles, :container => false %>
+</div>
+
+<%= render "articles/articles", obj: @category_articles %>
+
+<div class="flickr_pagination">
+  <%= will_paginate @category_articles, :container => false %>
 </div>
