@@ -2,6 +2,13 @@
 
 <h4 class="text-muted text-center mt-4"><%= @category_articles.count %> articles associated with this category</h4>
 
+<% if logged_in? and current_user.admin? %>
+  <div class="row justify-content-md-center">
+    <%= link_to "Edit category name", edit_category_path(@category), class: "badge badge-pill badge-secondary mr-3" %>
+    <%= link_to "Delete Category", category_path(@category), method: :delete, data: {confirm: "Do you really want to delete this category?"}, class: "badge badge-pill badge-danger" %>
+  </div>
+<% end %>
+
 <div class="flickr_pagination mt-4">
   <%= will_paginate @category_articles, :container => false %>
 </div>
