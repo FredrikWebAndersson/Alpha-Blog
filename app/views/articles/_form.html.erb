@@ -17,6 +17,15 @@
             <%= f.text_area :description, rows: 10, class: "form-control shadow rounded", placeholder: "Content" %>
           </div> 
         </div>
+       
+        <div class="form-group row form-check form-check-inline">
+          <%= f.label :categories, class: "col-2 col-form-laber" %>
+          <div class="col-10">
+            <%= f.collection_check_boxes :category_ids, Category.all, :id, :name do |cb| %>
+              <% cb.label(class: "form-check-label mb-2") {cb.check_box(class: "form-check-input ml-4") + cb.text} %>
+            <% end %>
+          </div>
+        </div>
 
         <div class="form-group row justify-content-center">
           <%= f.submit class: "btn btn-outline-light btn-lg" %>
@@ -28,3 +37,4 @@
     <%= link_to "[ Cancel ]", articles_path, class: " text-info text-decoration-none" %>
   </div>
 </div>
+
